@@ -1,0 +1,21 @@
+import javax.swing.*;
+
+public class tipsrunda {
+
+	static String[] array = new String[13];
+	
+	static JOptionPane pane = new JOptionPane();
+
+	public static void main(String[] args) {
+		
+		for(int i = 0; i < array.length; i++){
+			
+			String inputValue = JOptionPane.showInputDialog("1 X eller 2");
+			
+			array[i] = inputValue;
+			
+		}
+		
+		JOptionPane.showMessageDialog(pane, array);
+	}
+}

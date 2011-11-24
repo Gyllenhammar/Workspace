@@ -1,0 +1,39 @@
+package Banksystem;
+
+import java.awt.*;
+import javax.swing.*;
+
+public class Gui {
+	
+	private JFrame frame = new JFrame("Crime Bank");
+	private JLabel l_name;
+	private JTextField tf_Name;
+	private JPanel p_background, p_center, p_south;
+	
+	public Gui(){
+		
+		l_name = new JLabel("Namn: ");
+		tf_Name = new JTextField();
+		p_background = new JPanel();
+		p_center = new JPanel();
+		p_south = new JPanel();
+		
+		p_background.setLayout(new BorderLayout());
+		p_center.setLayout(new GridLayout());
+		p_south.setLayout(new FlowLayout());
+		
+		p_center.add(l_name);
+		p_background.add(p_center, BorderLayout.CENTER);
+		
+		frame.setContentPane(p_background);
+		frame.pack();
+		frame.setVisible(true);
+		
+		
+	}
+	
+	public static void main(String[] args){
+		new Gui();
+	}
+
+}

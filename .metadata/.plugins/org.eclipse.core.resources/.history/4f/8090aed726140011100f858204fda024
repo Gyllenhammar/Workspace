@@ -1,0 +1,159 @@
+package Banksystem;
+
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+import javax.swing.*;
+
+public class Gui {
+	
+	private JFrame frame = new JFrame("Bank");
+	private Bank banken = new Bank();
+	private Account konton;
+	private JOptionPane pane = new JOptionPane();
+	private JLabel l_text1, l_text2, l_text3, l_text4, l_text5;
+	private JTextField tf_field1, tf_field2, tf_field3, tf_field4, tf_field5;
+	private JButton b_button1, b_button2, b_button3, b_button4, b_button5, b_button6;
+	private JPanel p_background, p_center, p_south, p_north, p_west, p_east;
+	
+	public Gui(){
+		
+		// Här skapar jag objekt av allt som ska användas i framen!
+		
+		l_text1 = new JLabel("Namn");
+		l_text2 = new JLabel("Kontonummer");
+		l_text3 = new JLabel("Insättning");
+		l_text4 = new JLabel("Uttag");
+		l_text5 = new JLabel("Saldo");
+		
+		tf_field1 = new JTextField();
+		tf_field2 = new JTextField();
+		tf_field3 = new JTextField();
+		tf_field4 = new JTextField();
+		tf_field5 = new JTextField();
+		
+		b_button1 = new JButton("Skapa Konto");
+		b_button2 = new JButton("Ta bort Konto");
+		b_button3 = new JButton("Sök");
+		b_button4 = new JButton("Ta Ut");
+		b_button5 = new JButton("Sätt in");
+		b_button6 = new JButton("Rensa fält");
+		
+		// Här skapar jag alla paneler!
+		
+		p_background = new JPanel();
+		p_north = new JPanel();
+		p_center = new JPanel();
+		p_south = new JPanel();
+		
+		// Här sättar jag vilket layoutmanager som panelerna ska använda!
+		
+		p_background.setLayout(new BorderLayout());
+		p_center.setLayout(new GridLayout(5, 2));
+		p_south.setLayout(new GridLayout(2, 3));
+		p_north.setLayout(new FlowLayout());
+		
+		// här lägger jag in alla paneler i bakgrundspaneler (huvudpanelen)!
+		
+		p_background.add(p_north, BorderLayout.NORTH);
+		p_background.add(p_center, BorderLayout.CENTER);
+		p_background.add(p_south, BorderLayout.SOUTH);
+		
+		// här lägger jag in alla komponenter i panelerna!
+		
+		p_center.add(l_text1);
+		p_center.add(tf_field1);
+		p_center.add(l_text2);
+		p_center.add(tf_field2);
+		p_center.add(l_text3);
+		p_center.add(tf_field3);
+		p_center.add(l_text4);
+		p_center.add(tf_field4);
+		p_center.add(l_text5);
+		p_center.add(tf_field5);
+		
+		p_south.add(b_button1);
+		p_south.add(b_button2);
+		p_south.add(b_button3);
+		p_south.add(b_button4);
+		p_south.add(b_button5);
+		p_south.add(b_button6);
+		
+		//ActionListeners
+		
+		b_button1.addActionListener(new ActionListener()  //skapa
+		{  
+		   public void actionPerformed(ActionEvent e)  
+		   {  
+			   String name = tf_field1.getText();
+			   konton = new Account(name);
+			   banken.add(konton);
+			   JOptionPane.showMessageDialog(pane, "Grattis " + name + ", ditt kontonummer är nu: " + konton.getAccnumb());
+			   banken.print();
+			   
+		   }  
+		});
+		
+		b_button2.addActionListener(new ActionListener()  //ta bort
+		{  
+		   public void actionPerformed(ActionEvent e)  
+		   {  
+			   
+			   banken.remove(konton);
+			  
+		   }  
+		}); 
+		
+		b_button3.addActionListener(new ActionListener()  //sök
+		{  
+		   public void actionPerformed(ActionEvent e)  
+		   {  
+			   int Kontonr = Integer.parseInt(tf_field2.getText());
+			   Account findAccount = banken.find(Kontonr);
+			   JOptionPane.showMessageDialog(pane, konton.getHolder());
+		     
+		      }  
+		}); 
+		
+		b_button4.addActionListener(new ActionListener()  //ta ut
+		{  
+		   public void actionPerformed(ActionEvent e)  
+		   {  
+		      // do something for this button press  
+		   }  
+		}); 
+		
+		b_button5.addActionListener(new ActionListener()  //sätt in
+		{  
+		   public void actionPerformed(ActionEvent e)  
+		   {  
+		      // do something for this button press  
+		   }  
+		}); 
+		
+		b_button6.addActionListener(new ActionListener()  //rensa fält
+		{  
+		   public void actionPerformed(ActionEvent e)  
+		   {  
+		      // do something for this button press  
+		   }  
+		}); 
+		
+		
+		// övriga viktiga inställningar!
+		
+		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		frame.setContentPane(p_background);
+		frame.pack();
+		frame.setVisible(true);
+		frame.setLocationRelativeTo(null);
+		
+			
+		}
+	
+	public static void main(String[] args){
+		new Gui();
+	}
+
+}

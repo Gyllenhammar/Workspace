@@ -1,0 +1,19 @@
+package Banksystem;
+
+public class Sequence {
+
+	
+	static int counter2 = 999;
+	
+
+	public static int nextInt(){
+		counter2++;
+		return counter2;
+		
+	}
+
+
+	
+	
+	
+}

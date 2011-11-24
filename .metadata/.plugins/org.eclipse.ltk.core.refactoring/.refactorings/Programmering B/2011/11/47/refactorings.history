@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;deposit&apos; in &apos;Banksystem.Gui.Gui().new ActionListener() {...}.actionPerformed(...)&apos; to &apos;insattning&apos;&#x0A;- Original project: &apos;Programmering B&apos;&#x0A;- Original element: &apos;Banksystem.Gui.Gui().new ActionListener() {...}.actionPerformed(ActionEvent).deposit&apos;&#x0A;- Renamed element: &apos;deposit&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;deposit&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src&lt;Banksystem{Gui.java[Gui~Gui[~actionPerformed~QActionEvent;@deposit!2561!2579!2568!2574!D" name="insattning" references="true" stamp="1321976030292" version="1.0"/>
+</session>

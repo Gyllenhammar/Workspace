@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;letmein&apos; to &apos;Letmein&apos;&#x0A;- Original project: &apos;Programmering B&apos;&#x0A;- Original element: &apos;letmein&apos;&#x0A;- Renamed element: &apos;Letmein&apos;&#x0A;- Update references to refactored element&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;letmein&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;{letmein.java[letmein" matchStrategy="1" name="Letmein" qualified="false" references="true" similarDeclarations="false" stamp="1316523113135" textual="false" version="1.0"/>
+</session>
